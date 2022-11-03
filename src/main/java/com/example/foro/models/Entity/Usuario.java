@@ -1,7 +1,6 @@
 package com.example.foro.models.Entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,15 +35,16 @@ public class Usuario implements Serializable {
     private String usuario;
 
 
+
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public long getTel() {
+    public Long getTel() {
         return tel;
     }
 
@@ -84,7 +84,5 @@ public class Usuario implements Serializable {
         this.usuario = usuario;
     }
 
-
-    
     
 }
