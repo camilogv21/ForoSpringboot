@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="base :: head">
+    <title th:text="${titulo}">Document</title>
+</head>
+<body>
+    <nav th:replace="base :: nav"></nav>
+<body>
+    
+    <div class="container">
+        <h1 class="text-success border border-success border border-start-0 " th:text="${titulo}"></h1>
+        <table class="table table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Telefono</th>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Usuario</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </thead>
+    
+          <tbody>
+            <tr th:each="usuario: ${usuario}">
+              <td th:text="${usuario.id}"></td>
+              <td th:text="${usuario.tel}"></td>
+              <td th:text="${usuario.clave}"></td>
+              <td th:text="${usuario.nombre}"></td>
+              <td th:text="${usuario.apellido}"></td>
+              <td th:text="${usuario.usuario}"></td>
+              <td><a th:href="@{/form/} + ${usuario.id}" class="btn btn-success btn-xs">Editar</a></td>
+              <td><a th:href="@{/eliminar/} + ${usuario.id}" class="btn btn-danger btn-xs"
+                  onclick="return confirm('esta seguro de eliminar este registro')">Eliminar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer th:replace="base :: footer"></footer>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
